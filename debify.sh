@@ -31,7 +31,8 @@ cd tmp/
 log "Unpacking"
 
 tar xvfz ${KIBANA_NAME}.tar.gz
-cd ${KIBANA_NAME}
+mv ${KIBANA_NAME} kibana
+cd kibana
 
 log "Preparing the package"
 echo "web: ./bin/kibana" > Procfile
@@ -48,6 +49,11 @@ pkgr package . \
 
 log "Packaging done!"
 
-mv *.deb ${ROOT}/
+mv -v *.deb ${ROOT}/
 
+cd ${ROOT}
+
+log "Here's your package"
 ls *.deb
+
+log "Done. Goodbye"
