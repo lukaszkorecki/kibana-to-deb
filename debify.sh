@@ -30,7 +30,7 @@ cd tmp/
 
 log "Unpacking"
 
-tar xvfz ${KIBANA_NAME}.tar.gz
+tar xfz ${KIBANA_NAME}.tar.gz
 mv ${KIBANA_NAME} kibana
 cd kibana
 
